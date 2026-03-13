@@ -64,6 +64,7 @@
   },
   "devDependencies": {
     "@opennextjs/cloudflare": "latest",
+    "wrangler": "latest",
     "@tailwindcss/postcss": "4.1.12",
     "@types/node": "22.15.21",
     "@types/react": "18.3.23",
