@@ -95,7 +95,7 @@ export default function HomePage() {
                 alt="Yuliia Berkut"
                 width={128}
                 height={128}
-                className="rounded-full object-cover border border-gray-200"
+                className="rounded-full object-cover border border-gray-200 w-[128px] h-[128px]"
                 priority
               />
             </div>
