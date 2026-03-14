@@ -1,15 +1,11 @@
 import { ImageResponse } from 'next/og'
+import { profileImageBase64 } from '@/lib/og-profile-image'
 
 export const alt ='Yuliia Berkut — Accountant & Bookkeeper for Contractors in Toronto'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
 export default async function Image() {
-  const imgRes = await fetch('https://yberkut.com/yberkut.png')
-  const imgBuf = await imgRes.arrayBuffer()
-  const base64 = Buffer.from(imgBuf).toString('base64')
-  const profileSrc = `data:image/png;base64,${base64}`
-
   return new ImageResponse(
     (
       <div
@@ -39,7 +35,7 @@ export default async function Image() {
 
         {/* Profile photo */}
         <img
-          src={profileSrc}
+          src={profileImageBase64}
           width={140}
           height={140}
           style={{
