@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { ThemeProvider } from 'next-themes'
 import { Lora, Outfit } from 'next/font/google'
+import Script from 'next/script'
+import { PageTracker } from '@/components/page-tracker'
 import './globals.css'
 
 const lora = Lora({
@@ -59,7 +61,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          defer
+          src="https://cloud.umami.is/script.js"
+          data-website-id="dd7ac368-25cf-473d-ba14-c58e01e18393"
+          strategy="afterInteractive"
+          data-auto-track="false"
+        />
+      </head>
       <body className={`${lora.variable} ${outfit.variable}`}>
+        <PageTracker />
         <ThemeProvider
           attribute="class"
           defaultTheme="light"

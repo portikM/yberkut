@@ -1,4 +1,5 @@
 import { Button } from '@/components/ui/button'
+import { TrackedLink } from '@/components/tracked-link'
 import Image from 'next/image'
 
 export default function HomePage() {
@@ -77,9 +78,9 @@ export default function HomePage() {
                 size="sm"
                 className="rounded-full border-gray-200 hover:bg-gray-50"
               >
-                <a href="/Resume_Yuliia_Berkut.pdf" download>
+                <TrackedLink href="/Resume_Yuliia_Berkut.pdf" download event="resume_download">
                   Resume
-                </a>
+                </TrackedLink>
               </Button>
             </div>
           </div>
@@ -115,7 +116,7 @@ export default function HomePage() {
                 size="lg"
                 className="bg-emerald-600 hover:bg-emerald-700 text-white rounded-full"
               >
-                <a href="#contact">Get in touch</a>
+                <TrackedLink href="#contact" event="get_in_touch">Get in touch</TrackedLink>
               </Button>
               <Button
                 asChild
@@ -123,9 +124,9 @@ export default function HomePage() {
                 variant="outline"
                 className="rounded-full border-gray-200 hover:bg-gray-50"
               >
-                <a href="/Resume_Yuliia_Berkut.pdf" download>
+                <TrackedLink href="/Resume_Yuliia_Berkut.pdf" download event="resume_download">
                   Download resume
-                </a>
+                </TrackedLink>
               </Button>
             </div>
           </div>
@@ -181,18 +182,18 @@ export default function HomePage() {
               <span className="text-2xl">📧</span>
               <div>
                 <h3 className="font-medium text-gray-900">Email</h3>
-                <a href="mailto:yberkut@icloud.com" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                <TrackedLink href="mailto:yberkut@icloud.com" event="email_click" className="text-gray-600 hover:text-emerald-600 transition-colors">
                   yberkut@icloud.com
-                </a>
+                </TrackedLink>
               </div>
             </div>
             <div className="flex items-start gap-3">
               <span className="text-2xl">📱</span>
               <div>
                 <h3 className="font-medium text-gray-900">Phone</h3>
-                <a href="tel:+16475711536" className="text-gray-600 hover:text-emerald-600 transition-colors">
+                <TrackedLink href="tel:+16475711536" event="phone_click" className="text-gray-600 hover:text-emerald-600 transition-colors">
                   (647) 571-1536
-                </a>
+                </TrackedLink>
               </div>
             </div>
             <div className="flex items-start gap-3">
