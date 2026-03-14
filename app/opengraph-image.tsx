@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import { profileImageBase64 } from '@/lib/og-profile-image'
 
 export const alt ='Yuliia Berkut — Accountant & Bookkeeper for Contractors in Toronto'
 export const size = { width: 1200, height: 630 }
@@ -34,7 +35,7 @@ export default async function Image() {
 
         {/* Profile photo */}
         <img
-          src="https://yberkut.com/yberkut.png"
+          src={profileImageBase64}
           width={140}
           height={140}
           style={{
