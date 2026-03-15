@@ -4,11 +4,23 @@ import { useEffect } from 'react'
 
 export default function ResumePage() {
   useEffect(() => {
-    window.umami?.track('resume_direct_visit')
-    const timer = setTimeout(() => {
+    const interval = setInterval(() => {
+      if (window.umami) {
+        window.umami.track('resume_direct_visit')
+        clearInterval(interval)
+        window.location.href = '/Resume_Yuliia_Berkut.pdf'
+      }
+    }, 100)
+
+    const timeout = setTimeout(() => {
+      clearInterval(interval)
       window.location.href = '/Resume_Yuliia_Berkut.pdf'
-    }, 800)
-    return () => clearTimeout(timer)
+    }, 2000)
+
+    return () => {
+      clearInterval(interval)
+      clearTimeout(timeout)
+    }
   }, [])
 
   return (
